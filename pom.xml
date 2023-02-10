@@ -37,6 +37,8 @@
         <gravitee-bom.version>3.0.0</gravitee-bom.version>
         <gravitee-resource-api.version>1.1.0</gravitee-resource-api.version>
 
+        <rxjava3.version>3.1.6</rxjava3.version>
+
         <maven-plugin-javadoc.version>3.4.1</maven-plugin-javadoc.version>
         <maven-plugin-prettier.version>0.18</maven-plugin-prettier.version>
         <maven-plugin-prettier.prettierjava.version>2.0.0</maven-plugin-prettier.prettierjava.version>
@@ -61,6 +63,14 @@
             <groupId>io.gravitee.resource</groupId>
             <artifactId>gravitee-resource-api</artifactId>
             <version>${gravitee-resource-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Other -->
+        <dependency>
+            <groupId>io.reactivex.rxjava3</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>${rxjava3.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
