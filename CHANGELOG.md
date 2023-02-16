@@ -1,3 +1,10 @@
+# [1.0.0-alpha.2](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.0.0-alpha.1...1.0.0-alpha.2) (2023-02-16)
+
+
+### Features
+
+* add method to fetch schema by-passing the cache ([0ae8c8d](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/commit/0ae8c8d74a9031b18a3f1bd270eba35ad89892c3))
+
 # 1.0.0-alpha.1 (2023-02-13)
 
 
