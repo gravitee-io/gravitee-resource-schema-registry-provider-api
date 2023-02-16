@@ -21,7 +21,35 @@ import io.reactivex.rxjava3.core.Maybe;
 
 public abstract class SchemaRegistryResource<C extends ResourceConfiguration> extends AbstractConfigurableResource<C> {
 
+    /**
+     * Fetch the latest version of a schema from the schema registry.
+     * @param subject The subject used to fetch the schema.
+     * @return Maybe of Schema
+     */
     public abstract Maybe<Schema> getSchema(String subject);
 
+    /**
+     * Fetch the latest version of a schema from the schema registry.
+     * @param subject The subject used to fetch the schema.
+     * @param ignoreCache A flag to ignore the potential cache.
+     * @return Maybe of Schema
+     */
+    public abstract Maybe<Schema> getSchema(String subject, boolean ignoreCache);
+
+    /**
+     * Fetch a version of a schema from the schema registry.
+     * @param subject The subject used to fetch the schema.
+     * @param version The wanted version.
+     * @return Maybe of Schema
+     */
     public abstract Maybe<Schema> getSchema(String subject, String version);
+
+    /**
+     * Fetch a version of a schema from the schema registry.
+     * @param subject The subject used to fetch the schema
+     * @param version The wanted version.
+     * @param ignoreCache A flag to ignore the potential cache.
+     * @return Maybe of Schema
+     */
+    public abstract Maybe<Schema> getSchema(String subject, String version, boolean ignoreCache);
 }
