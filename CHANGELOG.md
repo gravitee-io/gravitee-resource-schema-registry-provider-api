@@ -1,3 +1,10 @@
+# [1.0.0-alpha.3](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.0.0-alpha.2...1.0.0-alpha.3) (2023-03-08)
+
+
+### Features
+
+* add missing constructor on SchemaLoadException ([eb26020](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/commit/eb2602089ff156291b9ef3a2f19492289f1457e1))
+
 # [1.0.0-alpha.2](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.0.0-alpha.1...1.0.0-alpha.2) (2023-02-16)
 
 
