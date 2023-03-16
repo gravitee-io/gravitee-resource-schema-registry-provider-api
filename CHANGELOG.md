@@ -1,3 +1,10 @@
+# [1.0.0-alpha.4](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.0.0-alpha.3...1.0.0-alpha.4) (2023-03-16)
+
+
+### Features
+
+* add method to fetch a schema by id ([4fac0a1](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/commit/4fac0a167f819bc3475960def2ef94440efc9cd0))
+
 # [1.0.0-alpha.3](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.0.0-alpha.2...1.0.0-alpha.3) (2023-03-08)
 
 
