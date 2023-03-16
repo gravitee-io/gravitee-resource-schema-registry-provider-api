@@ -22,6 +22,13 @@ import io.reactivex.rxjava3.core.Maybe;
 public abstract class SchemaRegistryResource<C extends ResourceConfiguration> extends AbstractConfigurableResource<C> {
 
     /**
+     * Fetch a schema from the schema registry using its id.
+     * @param id The id used to fetch the schema.
+     * @return Maybe of Schema
+     */
+    public abstract Maybe<Schema> getSchemaById(String id);
+
+    /**
      * Fetch the latest version of a schema from the schema registry.
      * @param subject The subject used to fetch the schema.
      * @return Maybe of Schema
