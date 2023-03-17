@@ -1,3 +1,10 @@
+# [1.0.0-alpha.5](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.0.0-alpha.4...1.0.0-alpha.5) (2023-03-17)
+
+
+### Bug Fixes
+
+* **deps:** upgrade gravitee-bom ([8edf7dc](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/commit/8edf7dcb5c54a92e66db2faf454da6f65b2e75ad))
+
 # [1.0.0-alpha.4](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.0.0-alpha.3...1.0.0-alpha.4) (2023-03-16)
 
 
