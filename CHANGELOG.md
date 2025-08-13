@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.0.0...1.0.1) (2025-08-13)
+
+
+### Bug Fixes
+
+* add support for fetching schema references ([a1eb430](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/commit/a1eb430034d7e24bb18a0763b3212465982e267b))
+
 # 1.0.0 (2023-03-17)
 
 
