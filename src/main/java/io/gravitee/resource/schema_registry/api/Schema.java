@@ -15,9 +15,14 @@
  */
 package io.gravitee.resource.schema_registry.api;
 
+import java.util.List;
+import java.util.Map;
+
 public interface Schema {
     String getContent();
     String getId();
     String getSubject();
     String getVersion();
+    List<Reference> getReferences();
+    Map<String, String> getDependencies();
 }
