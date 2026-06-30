@@ -15,23 +15,13 @@
  */
 package io.gravitee.resource.schema_registry.api;
 
-import java.util.List;
-import java.util.Map;
-
-public interface Schema {
-    String getContent();
-    String getId();
-    String getSubject();
-    String getVersion();
-    List<Reference> getReferences();
-    Map<String, String> getDependencies();
-
-    /**
-     * Serialization format of this schema (AVRO/JSON/PROTOBUF) as reported by the registry.
-     * Defaults to {@link SchemaType#UNKNOWN} for implementations that do not expose a type,
-     * keeping existing implementations source- and binary-compatible.
-     */
-    default SchemaType getType() {
-        return SchemaType.UNKNOWN;
-    }
+/**
+ * Serialization format of a {@link Schema}, as reported by the registry.
+ * {@code UNKNOWN} is the default for registries (or schemas) that do not expose a type.
+ */
+public enum SchemaType {
+    AVRO,
+    JSON,
+    PROTOBUF,
+    UNKNOWN,
 }
