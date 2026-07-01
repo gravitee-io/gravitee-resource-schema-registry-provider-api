@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.0.1...1.1.0) (2026-07-01)
+
+
+### Features
+
+* expose schema type and subject-membership lookup on the SPI ([#26](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/issues/26)) ([134c163](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/commit/134c163fe6bf7acb6d481cd82a1ff85b78c28e56))
+
 ## [1.0.1](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.0.0...1.0.1) (2025-08-13)
 
 
