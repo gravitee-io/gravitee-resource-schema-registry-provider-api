@@ -23,5 +23,6 @@ public enum SchemaType {
     AVRO,
     JSON,
     PROTOBUF,
+    XSD,
     UNKNOWN,
 }

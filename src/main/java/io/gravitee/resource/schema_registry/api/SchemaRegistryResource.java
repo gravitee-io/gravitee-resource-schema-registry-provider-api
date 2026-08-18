@@ -91,4 +91,19 @@ public abstract class SchemaRegistryResource<C extends ResourceConfiguration> ex
     public Single<List<String>> getVersions(String subject) {
         return Single.just(List.of());
     }
+
+    /**
+     * Fetch a versioned schema artifact using registry coordinates ({@code groupId} / {@code artifactId} / {@code version}).
+     * <p>
+     * The default implementation resolves empty so registries that only support subject-based lookup
+     * degrade gracefully until they implement artifact coordinates.
+     *
+     * @param groupId the schema group identifier.
+     * @param artifactId the schema artifact identifier.
+     * @param version the pinned artifact version.
+     * @return Maybe of the schema content, or empty if unsupported / not found.
+     */
+    public Maybe<Schema> getSchemaByArtifact(String groupId, String artifactId, String version) {
+        return Maybe.empty();
+    }
 }
