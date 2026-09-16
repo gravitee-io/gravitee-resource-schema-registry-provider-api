@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2015 The Gravitee team (http://gravitee.io)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +15,16 @@
  */
 package io.gravitee.resource.schema_registry.api;
 
-import static org.assertj.core.api.Assertions.assertThat;
+/**
+ * Thrown when a schema artifact is missing (root or referenced sibling).
+ * <p>
+ * Root misses from {@link ArtifactSchemaLookup#getArtifactSchema} are expressed as {@code Maybe.empty()}.
+ * Sibling misses during an all-or-nothing closure walk are raised as this exception so callers can map
+ * to {@code XML_VALIDATION_SCHEMA_ARTIFACT_NOT_FOUND} without string matching.
+ */
+public class SchemaArtifactNotFoundException extends SchemaLoadException {
 
-import org.junit.jupiter.api.Test;
-
-class SchemaRegistryResourceTest {
-
-    @Test
-    void shouldExposeXsdSchemaType() {
-        assertThat(SchemaType.valueOf("XSD")).isEqualTo(SchemaType.XSD);
+    public SchemaArtifactNotFoundException(String message) {
+        super(message);
     }
 }

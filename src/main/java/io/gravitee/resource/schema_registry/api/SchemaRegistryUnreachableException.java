@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2015 The Gravitee team (http://gravitee.io)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +15,20 @@
  */
 package io.gravitee.resource.schema_registry.api;
 
-import static org.assertj.core.api.Assertions.assertThat;
+/**
+ * Thrown for operational registry unavailability: transport failure, timeout, HTTP 5xx,
+ * auth failure after ready (HTTP 401/403), and the negative-cache / backoff window.
+ * <p>
+ * Distinct from coordinate misses ({@link SchemaArtifactNotFoundException}) and closure limits
+ * ({@link SchemaClosureLimitExceededException}), which must not enter the negative-cache window.
+ */
+public class SchemaRegistryUnreachableException extends SchemaLoadException {
 
-import org.junit.jupiter.api.Test;
+    public SchemaRegistryUnreachableException(String message) {
+        super(message);
+    }
 
-class SchemaRegistryResourceTest {
-
-    @Test
-    void shouldExposeXsdSchemaType() {
-        assertThat(SchemaType.valueOf("XSD")).isEqualTo(SchemaType.XSD);
+    public SchemaRegistryUnreachableException(String message, Throwable cause) {
+        super(message, cause);
     }
 }

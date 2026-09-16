@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2015 The Gravitee team (http://gravitee.io)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +15,13 @@
  */
 package io.gravitee.resource.schema_registry.api;
 
-import static org.assertj.core.api.Assertions.assertThat;
+/**
+ * Thrown when the schema-registry resource is present but {@code start()} did not complete successfully.
+ * Callers must prefer {@link ArtifactSchemaLookup#isReady()} before fetch; this is a defensive signal only.
+ */
+public class SchemaRegistryNotReadyException extends SchemaLoadException {
 
-import org.junit.jupiter.api.Test;
-
-class SchemaRegistryResourceTest {
-
-    @Test
-    void shouldExposeXsdSchemaType() {
-        assertThat(SchemaType.valueOf("XSD")).isEqualTo(SchemaType.XSD);
+    public SchemaRegistryNotReadyException(String message) {
+        super(message);
     }
 }

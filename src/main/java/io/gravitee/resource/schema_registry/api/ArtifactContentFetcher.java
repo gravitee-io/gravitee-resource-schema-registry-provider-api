@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2015 The Gravitee team (http://gravitee.io)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +15,21 @@
  */
 package io.gravitee.resource.schema_registry.api;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import io.reactivex.rxjava3.core.Maybe;
+import io.reactivex.rxjava3.core.Single;
+import java.util.List;
 
-import org.junit.jupiter.api.Test;
+/**
+ * HTTP transport used by {@link ArtifactSchemaClosureBuilder} (Gateway resource or Management advisory helper).
+ */
+public interface ArtifactContentFetcher {
+    /**
+     * GET artifact {@code /content}. Empty on HTTP 404.
+     */
+    Maybe<byte[]> fetchContent(String groupId, String artifactId, String version);
 
-class SchemaRegistryResourceTest {
-
-    @Test
-    void shouldExposeXsdSchemaType() {
-        assertThat(SchemaType.valueOf("XSD")).isEqualTo(SchemaType.XSD);
-    }
+    /**
+     * GET artifact {@code /references}. Empty list on 404 or [].
+     */
+    Single<List<ArtifactReference>> fetchReferences(String groupId, String artifactId, String version);
 }
