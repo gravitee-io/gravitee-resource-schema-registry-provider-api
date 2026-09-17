@@ -16,13 +16,15 @@
 package io.gravitee.resource.schema_registry.api;
 
 /**
- * Serialization format of a {@link Schema}, as reported by the registry.
- * {@code UNKNOWN} is the default for registries (or schemas) that do not expose a type.
+ * Thrown when a schema artifact is missing (root or referenced sibling).
+ * <p>
+ * Root misses from {@link ArtifactSchemaLookup#getArtifactSchema} are expressed as {@code Maybe.empty()}.
+ * Sibling misses during an all-or-nothing closure walk are raised as this exception so callers can map
+ * to {@code XML_VALIDATION_SCHEMA_ARTIFACT_NOT_FOUND} without string matching.
  */
-public enum SchemaType {
-    AVRO,
-    JSON,
-    PROTOBUF,
-    XSD,
-    UNKNOWN,
+public class SchemaArtifactNotFoundException extends SchemaLoadException {
+
+    public SchemaArtifactNotFoundException(String message) {
+        super(message);
+    }
 }

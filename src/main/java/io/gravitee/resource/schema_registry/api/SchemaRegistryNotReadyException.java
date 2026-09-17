@@ -16,13 +16,12 @@
 package io.gravitee.resource.schema_registry.api;
 
 /**
- * Serialization format of a {@link Schema}, as reported by the registry.
- * {@code UNKNOWN} is the default for registries (or schemas) that do not expose a type.
+ * Thrown when the schema-registry resource is present but {@code start()} did not complete successfully.
+ * Callers must prefer {@link ArtifactSchemaLookup#isReady()} before fetch; this is a defensive signal only.
  */
-public enum SchemaType {
-    AVRO,
-    JSON,
-    PROTOBUF,
-    XSD,
-    UNKNOWN,
+public class SchemaRegistryNotReadyException extends SchemaLoadException {
+
+    public SchemaRegistryNotReadyException(String message) {
+        super(message);
+    }
 }

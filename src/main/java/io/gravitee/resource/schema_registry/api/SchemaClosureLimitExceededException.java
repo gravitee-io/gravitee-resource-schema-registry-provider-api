@@ -16,13 +16,12 @@
 package io.gravitee.resource.schema_registry.api;
 
 /**
- * Serialization format of a {@link Schema}, as reported by the registry.
- * {@code UNKNOWN} is the default for registries (or schemas) that do not expose a type.
+ * Thrown when building an artifact schema closure exceeds configured limits
+ * (artifact count, total bytes, or import depth).
  */
-public enum SchemaType {
-    AVRO,
-    JSON,
-    PROTOBUF,
-    XSD,
-    UNKNOWN,
+public class SchemaClosureLimitExceededException extends SchemaLoadException {
+
+    public SchemaClosureLimitExceededException(String message) {
+        super(message);
+    }
 }

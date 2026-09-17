@@ -15,14 +15,21 @@
  */
 package io.gravitee.resource.schema_registry.api;
 
+import io.reactivex.rxjava3.core.Maybe;
+import io.reactivex.rxjava3.core.Single;
+import java.util.List;
+
 /**
- * Serialization format of a {@link Schema}, as reported by the registry.
- * {@code UNKNOWN} is the default for registries (or schemas) that do not expose a type.
+ * HTTP transport used by {@link ArtifactSchemaClosureBuilder} (Gateway resource or Management advisory helper).
  */
-public enum SchemaType {
-    AVRO,
-    JSON,
-    PROTOBUF,
-    XSD,
-    UNKNOWN,
+public interface ArtifactContentFetcher {
+    /**
+     * GET artifact {@code /content}. Empty on HTTP 404.
+     */
+    Maybe<byte[]> fetchContent(String groupId, String artifactId, String version);
+
+    /**
+     * GET artifact {@code /references}. Empty list on 404 or [].
+     */
+    Single<List<ArtifactReference>> fetchReferences(String groupId, String artifactId, String version);
 }
