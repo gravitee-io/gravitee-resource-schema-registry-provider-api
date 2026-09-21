@@ -6,5 +6,15 @@ image:https://dl.circleci.com/status-badge/img/gh/gravitee-io/gravitee-resource-
 image:https://f.hubspotusercontent40.net/hubfs/7600448/gravitee-github-button.jpg["Join the community forum", link="https://community.gravitee.io?utm_source=readme", height=20]
 
 
+== Compatibility matrix
+
+|===
+| Plugin version | APIM            | Java version
+
+| 1.x            | 4.9.x to latest | 11
+|===
+
+The *Java version* column is the bytecode level of the latest release of each line, which sets the minimum runtime able to load the artifact.
+
 == Description
 The resource schema registry provider API contains the interfaces to implement in order to create a schema registry provider plugin for Gravitee.io APIM. +
