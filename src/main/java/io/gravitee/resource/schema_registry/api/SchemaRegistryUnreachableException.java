@@ -16,13 +16,19 @@
 package io.gravitee.resource.schema_registry.api;
 
 /**
- * Serialization format of a {@link Schema}, as reported by the registry.
- * {@code UNKNOWN} is the default for registries (or schemas) that do not expose a type.
+ * Thrown for operational registry unavailability: transport failure, timeout, HTTP 5xx,
+ * auth failure after ready (HTTP 401/403), and the negative-cache / backoff window.
+ * <p>
+ * Distinct from coordinate misses ({@link SchemaArtifactNotFoundException}) and closure limits
+ * ({@link SchemaClosureLimitExceededException}), which must not enter the negative-cache window.
  */
-public enum SchemaType {
-    AVRO,
-    JSON,
-    PROTOBUF,
-    XSD,
-    UNKNOWN,
+public class SchemaRegistryUnreachableException extends SchemaLoadException {
+
+    public SchemaRegistryUnreachableException(String message) {
+        super(message);
+    }
+
+    public SchemaRegistryUnreachableException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }
