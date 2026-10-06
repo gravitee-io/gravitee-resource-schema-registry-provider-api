@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.1.0...1.2.0) (2026-10-06)
+
+
+### Features
+
+* add artifact schema lookup capability ([4417491](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/commit/4417491429606640b0bac837fa87556734b5939f))
+
 # [1.1.0](https://github.com/gravitee-io/gravitee-resource-schema-registry-provider-api/compare/1.0.1...1.1.0) (2026-07-01)
 
 
